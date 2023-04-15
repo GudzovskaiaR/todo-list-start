@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding-top: 50px;
+    font-family: sans-serif;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  input,
+  button {
+    border: none;
+    background: none;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
