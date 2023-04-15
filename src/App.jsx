@@ -5,8 +5,7 @@ import Search from './components/Search';
 import Buttons from './components/Buttons';
 
 function App() {
- 
-  const [todos, setTodos] = useState( [
+  const [todos, setTodos] = useState([
     { id: 1, text: 'learn HTML', done: false },
     { id: 2, text: 'learn JS', done: false },
     { id: 3, text: 'learn React', done: false },
@@ -15,16 +14,14 @@ function App() {
   const [addButtonText, setButtonText] = useState(['add', null]);
   const [editText, setEditText] = useState('');
 
-  
-
   // Додаємо та редагуємо todo
   function onSubmitHandler(text, index) {
     if (index === null) {
       const newId = todos.length + 1;
-
-      setTodos([...todos, { id: newId, text: text, done: false }]);
+      const newTodosSecond = [...todos, { id: newId, text: text, done: false }];
+      setTodos(newTodosSecond);
     } else {
-      // setButtonText(['add', '']);
+      setButtonText(['add', '']);
 
       const newTodos = todos.map((todo) =>
         todo.id === index + 1 ? { ...todo, text: text } : todo
@@ -39,7 +36,7 @@ function App() {
       todo.id === id ? { ...todo, done: !todo.done } : todo
     );
 
-    setTodos( newTodos);
+    setTodos(newTodos);
   }
 
   // Пошук задачі
